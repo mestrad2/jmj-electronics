@@ -1,3 +1,7 @@
+# Config Note
+
+In config/config.json the connection to postgres will need to change based on the user's enviroment
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
