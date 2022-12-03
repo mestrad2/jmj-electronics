@@ -17,6 +17,11 @@ app.get('/', (req, res) => {
     })
 })
 
+// CONTROLLERS 
+const appliancesController = require('./controllers/appliances_controller')
+app.use('/appliances', appliancesController)
+
+
 // LISTEN
 app.listen(process.env.PORT, () => {
     console.log(`🎮 JMJ Electronics on port: ${process.env.PORT}`)

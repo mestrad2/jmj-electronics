@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     desc: {
-      typ3: DataTypes.STRING
+      type: DataTypes.STRING
     },
     cost_ea: {
       type: DataTypes.INTEGER
