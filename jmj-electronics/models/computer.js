@@ -1,31 +1,38 @@
-// DEPENDENCIES
-const { Sequelize, DataTypes,  Model } = require('sequelize')
-const { STRING } = require('sequelize/types')
-const sequelize = new Sequelize(process.env.PG_URI)
-
-// MODEL
-class Computer extends Model{}
-
-Computer.init({
-    computers_id: { 
-        type: DataTypes.INTEGER, 
-        primaryKey: true,  
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Computer extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
+  }
+  Computer.init({
+    computers_id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
         autoIncrement: true,
-        allowNull: false 
+        allowNull: false
     },
-    desc: { 
-        type: DataTypes.STRING, 
-        allowNull: false 
+    desc: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
-    cost: { 
-        type: DataTypes.INTEGER, 
-        allowNull: false 
+    cost: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
-    image: { 
-        type: DataTypes.STRING 
+    image: {
+        type: DataTypes.STRING
     },
-    brand: { 
-        type: DataTypes.STRING 
+    brand: {
+        type: DataTypes.STRING
     },
     model_num: {
         type: DataTypes.STRING
@@ -38,13 +45,12 @@ Computer.init({
     },
     color: {
         type: DataTypes.STRING
-    },
-}, {
-    sequelize,                           
+    }
+  }, {
+    sequelize,
     modelName: 'Computer',
     tableName: 'computer',
     timestamps: false
-}) 
-
-// EXPORT
-module.exports = Computer
+  });
+  return Computer;
+};
