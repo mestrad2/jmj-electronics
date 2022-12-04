@@ -1,27 +1,27 @@
 {
     "name": "SequelizeDatabaseError",
     "parent": {
-        "length": 107,
+        "length": 106,
         "name": "error",
         "severity": "ERROR",
         "code": "42P01",
-        "position": "98",
+        "position": "58",
         "file": "parse_relation.c",
         "line": "1395",
         "routine": "parserOpenTable",
-        "sql": "SELECT \"computers_id\", \"desc\", \"cost\", \"image\", \"brand\", \"model_num\", \"spec\", \"os\", \"color\" FROM \"computer\" AS \"Computer\";"
+        "sql": "SELECT \"search_id\", \"desc\", \"cost\", \"image\", \"spec\" FROM \"searchs\" AS \"Search\";"
     },
     "original": {
-        "length": 107,
+        "length": 106,
         "name": "error",
         "severity": "ERROR",
         "code": "42P01",
-        "position": "98",
+        "position": "58",
         "file": "parse_relation.c",
         "line": "1395",
         "routine": "parserOpenTable",
-        "sql": "SELECT \"computers_id\", \"desc\", \"cost\", \"image\", \"brand\", \"model_num\", \"spec\", \"os\", \"color\" FROM \"computer\" AS \"Computer\";"
+        "sql": "SELECT \"search_id\", \"desc\", \"cost\", \"image\", \"spec\" FROM \"searchs\" AS \"Search\";"
     },
-    "sql": "SELECT \"computers_id\", \"desc\", \"cost\", \"image\", \"brand\", \"model_num\", \"spec\", \"os\", \"color\" FROM \"computer\" AS \"Computer\";",
+    "sql": "SELECT \"search_id\", \"desc\", \"cost\", \"image\", \"spec\" FROM \"searchs\" AS \"Search\";",
     "parameters": {}
 }
