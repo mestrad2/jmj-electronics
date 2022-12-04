@@ -17,12 +17,22 @@ app.get('/', (req, res) => {
     })
 })
 
+
 // CONTROLLERS 
 const appliancesController = require('./controllers/appliances_controller')
 app.use('/appliances', appliancesController)
 
 const cartsController = require('./controllers/carts_controller')
 app.use('/carts', cartsController)
+
+const computersController = require('./controllers/computers_controller')
+app.use('/computers', computersController)
+
+const phonesController = require('./controllers/phones_controller')
+app.use('/phones', phonesController)
+
+const tvsController = require('./controllers/tvs_controller')
+app.use('/tvs', tvsController)
 
 
 // LISTEN
