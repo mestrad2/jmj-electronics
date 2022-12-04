@@ -34,6 +34,8 @@ app.use('/phones', phonesController)
 const tvsController = require('./controllers/tvs_controller')
 app.use('/tvs', tvsController)
 
+const productsController = require('./controllers/products_controller')
+app.use('/products', productsController)
 
 // LISTEN
 app.listen(process.env.PORT, () => {
