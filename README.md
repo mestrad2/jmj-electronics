@@ -1,6 +1,7 @@
 # Config Note
 
-In config/config.json the connection to postgres will need to change based on the user's enviroment
+In config/config.json the connection to postgres will need to change based on the user's enviroment.
+In .env changed the port to 3003 to avoid conflict with front end app.
 
 # Getting Started with Create React App
 
