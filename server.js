@@ -21,6 +21,9 @@ app.get('/', (req, res) => {
 const appliancesController = require('./controllers/appliances_controller')
 app.use('/appliances', appliancesController)
 
+const cartsController = require('./controllers/carts_controller')
+app.use('/carts', cartsController)
+
 
 // LISTEN
 app.listen(process.env.PORT, () => {

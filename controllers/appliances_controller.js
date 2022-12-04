@@ -70,10 +70,5 @@ appliances.delete('/:id', async (req, res) => {
     }
 })
 
-
-
-
-
-
 // EXPORT
 module.exports = appliances
