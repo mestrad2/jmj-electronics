@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false
     },
-    desc: {
+    description: {
         type: DataTypes.STRING,
         allowNull: false
     },
