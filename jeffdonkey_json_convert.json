@@ -1,27 +1,57 @@
-{
-    "name": "SequelizeDatabaseError",
-    "parent": {
-        "length": 106,
-        "name": "error",
-        "severity": "ERROR",
-        "code": "42P01",
-        "position": "58",
-        "file": "parse_relation.c",
-        "line": "1395",
-        "routine": "parserOpenTable",
-        "sql": "SELECT \"search_id\", \"desc\", \"cost\", \"image\", \"spec\" FROM \"searchs\" AS \"Search\";"
+[
+    {
+        "appliances_id": 1,
+        "description": "Clothes Washer",
+        "cost": "$529.98",
+        "image": "need",
+        "brand": "Warmpoint",
+        "model_num": "CW555",
+        "spec": "washer ipsum",
+        "color": "white",
+        "utility": "electric, water"
     },
-    "original": {
-        "length": 106,
-        "name": "error",
-        "severity": "ERROR",
-        "code": "42P01",
-        "position": "58",
-        "file": "parse_relation.c",
-        "line": "1395",
-        "routine": "parserOpenTable",
-        "sql": "SELECT \"search_id\", \"desc\", \"cost\", \"image\", \"spec\" FROM \"searchs\" AS \"Search\";"
+    {
+        "appliances_id": 2,
+        "description": "Clothes Washer",
+        "cost": "$608.98",
+        "image": "need",
+        "brand": "Dandum",
+        "model_num": "CWDD4121",
+        "spec": "washer ipsum",
+        "color": "white",
+        "utility": "electric, water"
     },
-    "sql": "SELECT \"search_id\", \"desc\", \"cost\", \"image\", \"spec\" FROM \"searchs\" AS \"Search\";",
-    "parameters": {}
-}
+    {
+        "appliances_id": 3,
+        "description": "Clothes Dryer",
+        "cost": "$449.50",
+        "image": "need",
+        "brand": "Dandum",
+        "model_num": "DRDD4122",
+        "spec": "dryer ipsum",
+        "color": "spring yellow",
+        "utility": "electric"
+    },
+    {
+        "appliances_id": 4,
+        "description": "Dish Washer",
+        "cost": "$650.00",
+        "image": "need",
+        "brand": "Spark",
+        "model_num": "000100dws",
+        "spec": "dish ipsum",
+        "color": "natural",
+        "utility": "electric, water"
+    },
+    {
+        "appliances_id": 5,
+        "description": "Oven with Stove Top",
+        "cost": "$521.33",
+        "image": "need",
+        "brand": "HotHeat",
+        "model_num": "22OSTHH",
+        "spec": "oven ipsum",
+        "color": "stained steel",
+        "utility": "gas"
+    }
+]

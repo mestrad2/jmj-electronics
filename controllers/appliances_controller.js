@@ -4,10 +4,14 @@ const db = require('../models')
 const { Appliance } = db 
 const { Op } = require('sequelize')
 
-// FIND ALL APPLIANCES, get all route
+// FIND ALL APPLIANCES WITH A searchTerm
 appliances.get('/', async (req, res) => {
+    let searchTerm = req.body.description
+    console.log ('this serarchTerm arrived: ' + searchTerm)
     try {
-        const foundAppliances = await Appliance.findAll()
+        const foundAppliances = await Appliance.findAll({
+            where: {description: { [Op.iLike]: `%${searchTerm ? searchTerm: ''}%` }}
+    })
         res.status(200).json(foundAppliances)
     } catch (error) {
         res.status(500).json(error)

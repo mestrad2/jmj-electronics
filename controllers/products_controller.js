@@ -14,6 +14,7 @@ products.get('/', async (req, res) => {
     }
 })
 
+
 // FIND A SPECIFIC PRODUCT, show route
 products.get('/:id', async (req, res) => {
     try {
