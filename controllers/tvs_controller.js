@@ -6,8 +6,12 @@ const { Op } = require('sequelize')
 
 // FIND ALL TVS, get all route
 tvs.get('/', async (req, res) => {
+    let searchTerm = req.body.description
+    console.log('this is my search' + searchTerm)
     try {
-        const foundTvs = await Tv.findAll()
+        const foundTvs = await Tv.findAll({
+            where: { description: { [Op.iLike]: `%${searchTerm ? searchTerm : ''}%` } } 
+        })
         res.status(200).json(foundTvs)
     } catch (error) {
         res.status(500).json(error)
@@ -15,13 +19,9 @@ tvs.get('/', async (req, res) => {
 })
 
 // FIND A SPECIFIC TV, show route
-tvs.get('/:searchTerm', async (req, res) => {
-    let searchTerm = req.body.item_desc;
-    console.log('this is my search' + searchTerm)
+tvs.get('/:id', async (req, res) => {
     try {
-        const foundTvs = await Tv.findOne({
-            where: { desc: { [Op.like]: `%${searchTerm ? searchTerm : ''}%` } } 
-        })
+        const foundTvs = await Tv.findOne()
         res.status(200).json(foundTvs)
     } catch (error) {
         res.status(500).json(error)
