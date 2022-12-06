@@ -1,22 +1,22 @@
 {
   "development": {
     "username": "postgres",
-    "password": "Watts41",
-    "database": "Milestone_2",
+    "password": "dudjlk94",
+    "database": "milestone_2_testing",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "Watts41",
-    "database": "Milestone_2_test",
+    "password": "dudjlk94",
+    "database": "milestone_2_testing_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "Watts41",
-    "database": "Milestone_2_production",
+    "password": "dudjlk94",
+    "database": "milestone_2_testing_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
