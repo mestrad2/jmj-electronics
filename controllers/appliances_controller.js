@@ -2,6 +2,7 @@
 const appliances = require('express').Router()
 const db = require('../models')
 const { Appliance } = db 
+const { Op } = require('sequelize')
 
 // FIND ALL APPLIANCES, get all route
 appliances.get('/', async (req, res) => {

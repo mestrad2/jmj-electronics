@@ -2,6 +2,7 @@
 const tvs = require('express').Router()
 const db = require('../models')
 const { Tv } = db 
+const { Op } = require('sequelize')
 
 // FIND ALL TVS, get all route
 tvs.get('/', async (req, res) => {
@@ -14,10 +15,12 @@ tvs.get('/', async (req, res) => {
 })
 
 // FIND A SPECIFIC TV, show route
-tvs.get('/:id', async (req, res) => {
+tvs.get('/:searchTerm', async (req, res) => {
+    let searchTerm = req.body.item_desc;
+    console.log('this is my search' + searchTerm)
     try {
         const foundTvs = await Tv.findOne({
-            where: { tvs_id: req.params.id }
+            where: { desc: { [Op.like]: `%${searchTerm ? searchTerm : ''}%` } } 
         })
         res.status(200).json(foundTvs)
     } catch (error) {

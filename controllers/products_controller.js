@@ -2,6 +2,7 @@
 const products = require('express').Router()
 const db = require('../models')
 const { Product } = db 
+const { Op } = require('sequelize')
 
 // FIND ALL PRODUCTS, get route
 products.get('/', async (req, res) => {

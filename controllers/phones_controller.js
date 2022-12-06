@@ -2,6 +2,7 @@
 const phones = require('express').Router()
 const db = require('../models')
 const { Phone } = db 
+const { Op } = require('sequelize')
 
 // FIND ALL PHONESS, get all route
 phones.get('/', async (req, res) => {
