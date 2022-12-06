@@ -6,8 +6,12 @@ const { Op } = require('sequelize')
 
 // FIND ALL CARTS, get all route
 carts.get('/', async (req, res) => {
+    let searchTerm = req.body.description
+    console.log ('this serarchTerm arrived: ' + searchTerm)
     try {
-        const foundCarts = await Cart.findAll()
+        const foundCarts = await Cart.findAll({
+            where: {description: { [Op.iLike]: `%${searchTerm ? searchTerm: ''}%` }}
+    })
         res.status(200).json(foundCarts)
     } catch (error) {
         res.status(500).json(error)
