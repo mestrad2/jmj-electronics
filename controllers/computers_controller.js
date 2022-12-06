@@ -6,13 +6,18 @@ const { Op } = require('sequelize')
 
 // FIND ALL COMPUTERS, get all route
 computers.get('/', async (req, res) => {
+    let searchTerm = req.body.description
+    console.log ('this serarchTerm arrived: ' + searchTerm)
     try {
-        const foundComputers = await Computer.findAll()
+        const foundComputers = await Computer.findAll({
+            where: {description: { [Op.iLike]: `%${searchTerm ? searchTerm: ''}%` }}
+    })
         res.status(200).json(foundComputers)
     } catch (error) {
         res.status(500).json(error)
     }
 })
+
 
 // FIND A SPECIFIC COMPUTER, show route
 computers.get('/:id', async (req, res) => {
