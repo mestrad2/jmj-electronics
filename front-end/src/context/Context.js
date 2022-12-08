@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer, useState } from "react"
+import { createContext, useContext, useEffect, useReducer, useState } from "react"
 import { cartReducer } from "./Reducers";
 
 const Cart = createContext()
@@ -26,8 +26,6 @@ function Context({ children }) {
         fetchData()
     }, [])
     
-    console.log(product)
-
     //Reducers
     const [state, dispatch] = useReducer(cartReducer, {
         products: product,
@@ -42,3 +40,8 @@ function Context({ children }) {
 }
 
 export default Context
+
+//Allows use of the context created when called in other components
+export const CartState = () => {
+    return useContext(Cart)
+}
