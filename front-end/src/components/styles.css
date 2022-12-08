@@ -10,6 +10,26 @@
     justify-content: space-around;
 }
 
+.inventoryHeading {
+    display: flex;
+    width: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.inventoryContainer {
+    display: flex;
+    width: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.radios {
+    text-align: left;
+}
+
 .filters {
     background-color: rgb(43, 40, 40);
     color: white;

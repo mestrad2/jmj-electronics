@@ -27,6 +27,9 @@ function NavbarComponent() {
                         }}
                     />
                 </Navbar.Text>
+                <Navbar.Brand>
+                    <Link to="/inventory">Don't See a Product? Add One Here</Link>
+                </Navbar.Brand>
                 <Nav>
                     <Dropdown alignright="true">
                         <Dropdown.Toggle variant="success">
