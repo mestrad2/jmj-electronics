@@ -1,57 +1,122 @@
 [
     {
-        "appliances_id": 1,
-        "description": "Clothes Washer",
-        "cost": "$529.98",
-        "image": "need",
-        "brand": "Warmpoint",
-        "model_num": "CW555",
-        "spec": "washer ipsum",
-        "color": "white",
-        "utility": "electric, water"
+        "prod_id": 1,
+        "description": "Snell 17in Laptop, 4 core processor",
+        "cost": "$1,000.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "This is a product.",
+        "in_stock": 1,
+        "fast_deliver": true,
+        "product_type": "computer"
     },
     {
-        "appliances_id": 2,
-        "description": "Clothes Washer",
-        "cost": "$608.98",
-        "image": "need",
-        "brand": "Dandum",
-        "model_num": "CWDD4121",
-        "spec": "washer ipsum",
-        "color": "white",
-        "utility": "electric, water"
+        "prod_id": 2,
+        "description": "Snell 19in Laptop, 4 core processor",
+        "cost": "$1,100.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "This is a product.",
+        "in_stock": 1,
+        "fast_deliver": true,
+        "product_type": "computer"
     },
     {
-        "appliances_id": 3,
-        "description": "Clothes Dryer",
-        "cost": "$449.50",
-        "image": "need",
-        "brand": "Dandum",
-        "model_num": "DRDD4122",
-        "spec": "dryer ipsum",
-        "color": "spring yellow",
-        "utility": "electric"
+        "prod_id": 3,
+        "description": "Snell Desktop Computer combo, 16 core processor",
+        "cost": "$900.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "This is a product.",
+        "in_stock": 12,
+        "fast_deliver": true,
+        "product_type": "computer"
     },
     {
-        "appliances_id": 4,
-        "description": "Dish Washer",
-        "cost": "$650.00",
-        "image": "need",
-        "brand": "Spark",
-        "model_num": "000100dws",
-        "spec": "dish ipsum",
-        "color": "natural",
-        "utility": "electric, water"
+        "prod_id": 5,
+        "description": "Damsung Vixen6XL",
+        "cost": "$998.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "4GB, 7in screen",
+        "in_stock": 0,
+        "fast_deliver": true,
+        "product_type": "phone"
     },
     {
-        "appliances_id": 5,
-        "description": "Oven with Stove Top",
-        "cost": "$521.33",
-        "image": "need",
-        "brand": "HotHeat",
-        "model_num": "22OSTHH",
-        "spec": "oven ipsum",
-        "color": "stained steel",
-        "utility": "gas"
+        "prod_id": 6,
+        "description": "Damsung Vixen6XL-Extra",
+        "cost": "$1,298.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "8GB, 12in screen",
+        "in_stock": 0,
+        "fast_deliver": true,
+        "product_type": "phone"
+    },
+    {
+        "prod_id": 7,
+        "description": "Pear pPhone12 mobile phone",
+        "cost": "$1,298.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "2GB, 5.9in screen, stolen features",
+        "in_stock": 14,
+        "fast_deliver": true,
+        "product_type": "phone"
+    },
+    {
+        "prod_id": 8,
+        "description": "Generic Clothes Washer",
+        "cost": "$499.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "It washes",
+        "in_stock": 14,
+        "fast_deliver": true,
+        "product_type": "appliance"
+    },
+    {
+        "prod_id": 9,
+        "description": "Generic Clothes Dryer",
+        "cost": "$499.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "It drys",
+        "in_stock": 5,
+        "fast_deliver": true,
+        "product_type": "appliance"
+    },
+    {
+        "prod_id": 10,
+        "description": "Suplex Clothes Dryer, Washer, and Air Fryer",
+        "cost": "$499.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "It does alot",
+        "in_stock": 3,
+        "fast_deliver": true,
+        "product_type": "appliance"
+    },
+    {
+        "prod_id": 11,
+        "description": "Damsung 16in Laptop Computer",
+        "cost": "$557.00",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "a fine laptop",
+        "in_stock": 5,
+        "fast_deliver": true,
+        "product_type": "appliance"
+    },
+    {
+        "prod_id": 12,
+        "description": "Damsun 95in LED Television",
+        "cost": "$3,999.99",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "Wow thats a TV",
+        "in_stock": 22,
+        "fast_deliver": true,
+        "product_type": "television"
+    },
+    {
+        "prod_id": 13,
+        "description": "Damsun 55in LED Television",
+        "cost": "$500.99",
+        "image": "https://place-puppy.com/300x300",
+        "spec": "Eh thats a TV",
+        "in_stock": 0,
+        "fast_deliver": true,
+        "product_type": "television"
     }
 ]

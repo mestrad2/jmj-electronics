@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, BOOLEAN
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
@@ -34,6 +34,15 @@ module.exports = (sequelize, DataTypes) => {
     spec: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    in_stock: {
+      type: DataTypes.INTEGER
+    },
+    fast_deliver: {
+      type: DataTypes.BOOLEAN
+    },
+    product_type: {
+      type: DataTypes.STRING
     }
   }, {
     sequelize,
