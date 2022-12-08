@@ -8,6 +8,7 @@ const { Op } = require('sequelize')
 products.get('/', async (req, res) => {
     try {
         const foundProducts = await Product.findAll()
+        console.log(foundProducts)
         res.status(200).json(foundProducts)
     } catch (error) {
         res.status(500).json(error)
