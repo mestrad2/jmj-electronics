@@ -73,11 +73,7 @@ function Context({ children }) {
 
     const [productState, productDispatch] = useReducer(productReducer, {
         byStock: false,
-        byProductType: "",
-        byAppliance: false, 
-        byComputer: false, 
-        byPhone: false, 
-        byTV: false, 
+        byProductType: false,
         searchQuery: "",
     })
 

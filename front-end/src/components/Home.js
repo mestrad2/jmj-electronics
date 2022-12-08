@@ -6,13 +6,39 @@ import Filters from "./Filters";
 function Home() {
 
     //throws error currently until backend is fixed, set to dummy Array
-    const { 
-        state : { products },
-        productState: { byStock, byAppliance, byComputer, byPhone, byTV, sort}
+    const {
+        state: { products },
+        productState: { byStock, sort, typeSort }
     } = CartState()
 
-    const displayProducts = () => {
+    const filterProducts = () => {
         let tempProducts = products
+
+        if (sort) {
+            tempProducts = tempProducts.sort((a, b) => (
+                sort === 'lowToHigh' ? a.price - b.price : b.price - a.price
+            ))
+        }
+
+        if (!byStock) {
+            tempProducts = tempProducts.filter((prod) => prod.inStock)
+        }
+
+        if (typeSort === "appliance") {
+            tempProducts = tempProducts.filter((prod) => prod.productType.includes("appliance"))
+        }
+
+        if (typeSort === "computer") {
+            tempProducts = tempProducts.filter((prod) => prod.productType.includes("computer"))
+        }
+
+        if (typeSort === "phone") {
+            tempProducts = tempProducts.filter((prod) => prod.productType.includes("phone"))
+        }
+
+        if (typeSort === "tv") {
+            tempProducts = tempProducts.filter((prod) => prod.productType.includes("tv"))
+        }
 
         return tempProducts
     }
@@ -22,7 +48,7 @@ function Home() {
             <Filters />
             <div className="productContainer">
                 {
-                    displayProducts().map((prod) => {
+                    filterProducts().map((prod) => {
                         return <Product prod={prod} key={prod.id} />
                     })
                 }

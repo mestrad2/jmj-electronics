@@ -28,18 +28,12 @@ export const productReducer = (state, action) => {
             return { ...state, sort: action.payload }
         case "stockSort":
             return { ...state, byStock: !state.byStock }
-        case "applianceSort":
-            return { ...state, byAppliance: action.payload }
-        case "computerSort":
-            return { ...state, byComputer: action.payload }
-        case "phoneSort":
-            return { ...state, byPhone: action.payload }
-        case "tvSort":
-            return { ...state, byTV: action.payload }
+        case "typeSort":
+            return { ...state, typeSort: action.payload }
         case "search":
             return { ...state, searchQuery: action.payload }
         case "clear":
-            return { byStock: false, byAppliance: false, byComputer: false, byPhone: false, byTV: false, searchQuery: "" }
+            return { byStock: false, byProductType: false, searchQuery: "" }
         default:
             return state
     }
