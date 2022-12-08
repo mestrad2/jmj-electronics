@@ -65,6 +65,7 @@ function Context({ children }) {
         }
     ]
 
+
     //Reducers
     const [state, dispatch] = useReducer(cartReducer, {
         products: tempObjectArray,

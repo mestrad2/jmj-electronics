@@ -1,9 +1,13 @@
 import { Button, Card } from "react-bootstrap"
 import { CartState } from "../context/Context"
+import { Link } from "react-router-dom"
+
 
 function Product({ prod }) {
 
     const { state: { cart }, dispatch } = CartState()
+   
+
     return <div className="products">
         <Card>
             <Card.Img variant='top' src={prod.image} alt={prod.name} />
@@ -35,6 +39,9 @@ function Product({ prod }) {
                         </Button>
                     )
                 }
+                <Button>
+                    <Link to={`/edit/${prod.id}`} style={{ color: "white" }}>Update Item</Link>
+                </Button>
             </Card.Body>
         </Card>
     </div>
