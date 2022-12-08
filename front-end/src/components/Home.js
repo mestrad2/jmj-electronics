@@ -1,3 +1,4 @@
+import "./styles.css"
 import { CartState } from "../context/Context"
 import Product from "./Product";
 
