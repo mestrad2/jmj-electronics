@@ -14,4 +14,4 @@
     11. Note: you will need to make sure your config files target this database correctly.
 
 
-This has four tables. One for each category.
+Only the table named "production" is needed.
