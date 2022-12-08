@@ -3,7 +3,7 @@ import { CartState } from "../context/Context"
 
 function Filters() {
 
-    const { productState : {sort, typeSort, byStock, byAppliance, byComputer, byPhone, byTV }, productDispatch} = CartState()
+    const { productState : {sort, typeSort, byStock }, productDispatch} = CartState()
 
     return (
         <div className="filters">

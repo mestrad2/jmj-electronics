@@ -7,7 +7,7 @@ import { CartState } from '../context/Context'
 
 function NavbarComponent() {
 
-    const { state: { cart }, dispatch } = CartState()
+    const { state: { cart }, dispatch, productDispatch } = CartState()
     return (
         <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
             <Container>
@@ -19,6 +19,12 @@ function NavbarComponent() {
                         style={{ width: 500 }}
                         placeholder="Search a product"
                         className="m-auto"
+                        onChange={(e) => {
+                            productDispatch({
+                                type: "search",
+                                payload: e.target.value.toLowerCase()
+                            })
+                        }}
                     />
                 </Navbar.Text>
                 <Nav>
