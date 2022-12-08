@@ -62,7 +62,7 @@ carts.put('/:id', async (req, res) => {
 // DELETE A CART, delete route
 carts.delete('/:id', async (req, res) => {
     try {
-        const deletedCartss = await Cart.destroy({
+        const deletedCarts = await Cart.destroy({
             where: {
                 cart_id: req.params.id
             }
