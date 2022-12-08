@@ -28,40 +28,44 @@ function Context({ children }) {
 
     const tempObjectArray = [
         {
-            name: "object 1",
             id: 1,
+            name: "object 1",
             price: 5,
             image: "https://place-puppy.com/300x300",
+            description:"object number one",
             productType: "appliance",
             inStock: 3,
-            description:"object number one"
+            fastDelivery: true,
         },
         {
-            name: "object 2",
             id: 2,
+            name: "object 2",
             price: 7,
             image: "https://place-puppy.com/300x300",
+            description:"object number two",
             productType: "computer",
             inStock: 5,
-            description:"object number two"
+            fastDelivery: true,
         },
         {
-            name: "object 3",
             id: 3,
+            name: "object 3",
             price: 9,
             image: "https://place-puppy.com/300x300",
+            description:"object number three",
             productType: "phone",
-            inStock: 1,
-            description:"object number three"
+            inStock: 3,
+            fastDelivery: false,
         },
         {
-            name: "object 4",
             id: 4,
+            name: "object 4",
             price: 12,
             image: "https://place-puppy.com/300x300",
+            description:"object number four",
             productType: "tv",
             inStock: 0,
-            description:"object number four"
+            fastDelivery: false,
         }
     ]
 
@@ -75,6 +79,7 @@ function Context({ children }) {
     const [productState, productDispatch] = useReducer(productReducer, {
         byStock: false,
         byProductType: false,
+        byFastDelivery: false,
         searchQuery: "",
     })
 

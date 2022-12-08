@@ -3,7 +3,7 @@ import { CartState } from "../context/Context"
 
 function Filters() {
 
-    const { productState : {sort, typeSort, byStock }, productDispatch} = CartState()
+    const { productState : {sort, typeSort, byStock, byFastDelivery }, productDispatch} = CartState()
 
     return (
         <div className="filters">
@@ -53,6 +53,21 @@ function Filters() {
                         })
                     }
                     checked={byStock}
+                />
+            </span>
+            <span>
+                <Form.Check
+                    inline
+                    label="Fast Delivery Only"
+                    name="group1"
+                    type="checkbox"
+                    id={`inline-4`}
+                    onChange={() =>
+                        productDispatch({
+                            type: "deliverySort",
+                        })
+                    }
+                    checked={byFastDelivery}
                 />
             </span>
             <span>

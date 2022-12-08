@@ -8,7 +8,7 @@ function Home() {
     //throws error currently until backend is fixed, set to dummy Array
     const {
         state: { products },
-        productState: { byStock, sort, typeSort, searchQuery }
+        productState: { byStock, sort, typeSort, byFastDelivery, searchQuery }
     } = CartState()
 
     const filterProducts = () => {
@@ -39,6 +39,10 @@ function Home() {
         if (typeSort === "tv") {
             tempProducts = tempProducts.filter((prod) => prod.productType.includes("tv"))
         }
+
+        if (byFastDelivery) {
+            tempProducts = tempProducts.filter((prod) => prod.fastDelivery)
+          }
 
         if (searchQuery) {
             tempProducts = tempProducts.filter((prod) => prod.name.toLowerCase().includes(searchQuery))

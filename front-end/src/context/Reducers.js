@@ -30,6 +30,8 @@ export const productReducer = (state, action) => {
             return { ...state, byStock: !state.byStock }
         case "typeSort":
             return { ...state, typeSort: action.payload }
+        case "deliverySort":
+            return { ...state, byFastDelivery: !state.byFastDelivery };
         case "search":
             return { ...state, searchQuery: action.payload }
         case "clear":

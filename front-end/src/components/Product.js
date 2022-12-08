@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 function Product({ prod }) {
 
     const { state: { cart }, dispatch } = CartState()
-   
+
 
     return <div className="products">
         <Card>
@@ -19,6 +19,11 @@ function Product({ prod }) {
                     <span>Description: {prod.description} </span>
                     <br />
                     <span>Type: {prod.productType}</span>
+                    {prod.fastDelivery ? (
+                        <div>Fast Delivery</div>
+                    ) : (
+                        <div>7 Day Delivery</div>
+                    )}
                 </Card.Subtitle>
                 {
                     cart.some((p) => p.id === prod.id) ? (
