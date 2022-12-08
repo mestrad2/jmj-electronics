@@ -31,33 +31,37 @@ function Context({ children }) {
             name: "object 1",
             id: 1,
             price: 5,
-            image: "image",
+            image: "https://place-puppy.com/300x300",
             productType: "appliance",
             inStock: 3,
+            description:"object number one"
         },
         {
             name: "object 2",
             id: 2,
             price: 7,
-            image: "image",
+            image: "https://place-puppy.com/300x300",
             productType: "computer",
             inStock: 5,
+            description:"object number two"
         },
         {
             name: "object 3",
             id: 3,
             price: 9,
-            image: "image",
+            image: "https://place-puppy.com/300x300",
             productType: "phone",
             inStock: 1,
+            description:"object number three"
         },
         {
             name: "object 4",
             id: 4,
             price: 12,
-            image: "image",
+            image: "https://place-puppy.com/300x300",
             productType: "tv",
-            inStock: 2,
+            inStock: 0,
+            description:"object number four"
         }
     ]
 

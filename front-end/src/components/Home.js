@@ -11,13 +11,20 @@ function Home() {
         productState: { byStock, byAppliance, byComputer, byPhone, byTV, sort}
     } = CartState()
 
+    const displayProducts = () => {
+        let tempProducts = products
+
+        return tempProducts
+    }
 
     return (
         <div className="home">
             <Filters />
             <div className="productContainer">
                 {
-                    <Product prod={products} key={products.id} />
+                    displayProducts().map((prod) => {
+                        return <Product prod={prod} key={prod.id} />
+                    })
                 }
             </div>
         </div>
