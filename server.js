@@ -2,6 +2,10 @@
 const express = require('express')
 const app = express()
 const { Sequelize } = require('sequelize')
+const cors = require ('cors')
+
+app.use(cors())
+
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
