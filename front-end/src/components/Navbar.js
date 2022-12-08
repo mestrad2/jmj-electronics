@@ -8,7 +8,7 @@ function NavbarComponent() {
         <Navbar>
             <Container>
                 <Navbar.Brand>
-                    <a href="/">JMJ Electronics</a>
+                    <Link to="/">JMJ Electronics</Link>
                 </Navbar.Brand>
                 <Navbar.Text className='search'>
                     <FormControl
