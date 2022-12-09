@@ -73,3 +73,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+Jonovan Watts Project Contributions
+
+- Implemented the code and tested the code for the controllers(through Postman)
+
+- Assisted Jeff with the Back-End portion of the project
+
+- Assisted with the database in PG Admin
+
+- Assisted in server.js with the dependencies, configuration, root, controllers, and customized the Port
+
+- Researched ideas on sequelize operators such as Op.Or and Op.Like to make the search for the lookup tables have variability in them and implemented all
+
+- Researched links on how to implement a shopping cart for the group
+
+- Reviewed code for group members and merged changes through Github
+
+- Attended all work sessions with the group outside of class through Cosmos
+
