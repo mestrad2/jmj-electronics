@@ -16,7 +16,7 @@ export const cartReducer = (state, action) => {
                     c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty
                 ),
             };
-        case 'startCart': 
+        case 'startCart':
             return {
                 ...action.payload,
                 initialized: true
@@ -49,7 +49,9 @@ export const productReducer = (state, action) => {
 export const addItemReducer = (state, action) => {
     switch (action.type) {
         case "addItem":
-            return { ...state, item: action.payload }
+            return {
+                ...action.payload
+            }
         default:
             return state
     }

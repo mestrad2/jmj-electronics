@@ -7,26 +7,32 @@ function Inventory() {
         addItemDispatch
     } = CartState()
 
-    const [newDescription, setNewDescription] = useState("")
-    const [newCost, setNewCost] = useState("")
-    const [newImage, setNewImage] = useState("")
-    const [newSpec, setNewSpec] = useState("")
-    const [newStock, setNewStock] = useState(0)
-    const [newDeliver, setNewDeliver] = useState(false)
-    const [newProductType, setNewProductType] = useState("")
 
+    const initialItem = {
+        description: "",
+        cost: "",
+        image: "",
+        spec: "",
+        stock: "",
+        fast_deliver: false,
+        product_type: "",
+    }
+
+    const [item, setItem] = useState(initialItem)
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target
+        console.log("Value", value)
+        setItem({
+            ...item,
+            [name]: value
+        })
+    }
 
     const handleSubmit = () => {
 
-        const newItem = {
-            description: newDescription,
-            cost: newCost,
-            image: newImage,
-            spec: newSpec,
-            in_stock: newStock,
-            fast_deliver: newDeliver,
-            product_type: newProductType
-        }
+        const newItem = item
+        console.log("NewItem" , item.description)
         try {
             fetch(`http://localhost:3003/products`, {
                 method: "POST",
@@ -57,7 +63,8 @@ function Inventory() {
                     <Form.Label column sm={2}>Add a Product</Form.Label>
                     <Col>
                         <Form.Control
-                            onChange={(e) => {setNewDescription(e.target.value)}}
+                            value={item.description}
+                            onChange={handleInputChange}
                             name='description'
                             type="text"
                             placeholder="Enter Product Name"
@@ -69,7 +76,8 @@ function Inventory() {
                     <Form.Label column sm={2}>Add a Price</Form.Label>
                     <Col>
                         <Form.Control
-                            onChange={(e) => {setNewCost(e.target.value)}}
+                            value={item.cost}
+                            onChange={handleInputChange}
                             name='cost'
                             type="text"
                             placeholder="Enter Price"
@@ -81,7 +89,8 @@ function Inventory() {
                     <Form.Label column sm={2}>Add Quantity in Stock</Form.Label>
                     <Col>
                         <Form.Control
-                            onChange={(e) => {setNewStock(e.target.value)}}
+                            value={item.stock}
+                            onChange={handleInputChange}
                             name='in_stock'
                             type="text"
                             placeholder="Enter Quantity in Stock"
@@ -93,7 +102,8 @@ function Inventory() {
                     <Form.Label column sm={2}>Add a Description</Form.Label>
                     <Col>
                         <Form.Control
-                            onChange={(e) => {setNewSpec(e.target.value)}}
+                            value={item.spec}
+                            onChange={handleInputChange}
                             name='spec'
                             type="text"
                             placeholder="Enter Description"
@@ -104,7 +114,8 @@ function Inventory() {
                     <Form.Label column sm={2}>Add a Image</Form.Label>
                     <Col>
                         <Form.Control
-                            onChange={(e) => {setNewImage(e.target.value)}}
+                            value={item.image}
+                            onChange={handleInputChange}
                             name='image'
                             type="text"
                             placeholder="Enter Image URL"
@@ -118,25 +129,29 @@ function Inventory() {
                         </Form.Label>
                         <Col sm={10} className="radios">
                             <Form.Check
-                                onChange={(e) => {setNewProductType(e.target.value)}}
+                                value="Appliance"
+                                onChange={handleInputChange}
                                 name="product_type"
                                 type="radio"
                                 label="Appliance"
                             />
                             <Form.Check
-                                onChange={(e) => {setNewProductType(e.target.value)}}
+                                value="Computer"
+                                onChange={handleInputChange}
                                 name="product_type"
                                 type="radio"
                                 label="Computer"
                             />
                             <Form.Check
-                                onChange={(e) => {setNewProductType(e.target.value)}}
+                                value="Phone"
+                                onChange={handleInputChange}
                                 name="product_type"
                                 type="radio"
                                 label="Phone"
                             />
                             <Form.Check
-                                onChange={(e) => {setNewProductType(e.target.value)}}
+                                value="TV"
+                                onChange={handleInputChange}
                                 name="product_type"
                                 type="radio"
                                 label="TV"
@@ -149,14 +164,16 @@ function Inventory() {
                         </Form.Label>
                         <Col sm={10} className="radios">
                             <Form.Check
-                                onChange={(e) => {setNewDeliver(true)}}
+                                value={true}
+                                onChange={handleInputChange}
                                 name="fast_deliver"
                                 type="radio"
                                 label="Fast Delivery"
 
                             />
                             <Form.Check
-                                onChange={(e) => {setNewDeliver(false)}}
+                                value={false}
+                                onChange={handleInputChange}
                                 name="fast_deliver"
                                 type="radio"
                                 label="7 Day Deliver"
