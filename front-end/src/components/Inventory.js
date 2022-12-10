@@ -13,7 +13,7 @@ function Inventory() {
         cost: "",
         image: "",
         spec: "",
-        stock: "",
+        in_stock: "",
         fast_deliver: false,
         product_type: "",
     }
@@ -22,6 +22,7 @@ function Inventory() {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
+        console.log("Name", name)
         console.log("Value", value)
         setItem({
             ...item,
@@ -29,10 +30,11 @@ function Inventory() {
         })
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
 
         const newItem = item
-        console.log("NewItem" , item.description)
+        console.log("NewItem", item.description)
         try {
             fetch(`http://localhost:3003/products`, {
                 method: "POST",
@@ -65,6 +67,7 @@ function Inventory() {
                         <Form.Control
                             value={item.description}
                             onChange={handleInputChange}
+                            id="description"
                             name='description'
                             type="text"
                             placeholder="Enter Product Name"
@@ -78,6 +81,7 @@ function Inventory() {
                         <Form.Control
                             value={item.cost}
                             onChange={handleInputChange}
+                            id="cost"
                             name='cost'
                             type="text"
                             placeholder="Enter Price"
@@ -89,8 +93,9 @@ function Inventory() {
                     <Form.Label column sm={2}>Add Quantity in Stock</Form.Label>
                     <Col>
                         <Form.Control
-                            value={item.stock}
+                            value={item.in_stock}
                             onChange={handleInputChange}
+                            id="in_stock"
                             name='in_stock'
                             type="text"
                             placeholder="Enter Quantity in Stock"
@@ -104,6 +109,7 @@ function Inventory() {
                         <Form.Control
                             value={item.spec}
                             onChange={handleInputChange}
+                            id="spec"
                             name='spec'
                             type="text"
                             placeholder="Enter Description"
@@ -116,6 +122,7 @@ function Inventory() {
                         <Form.Control
                             value={item.image}
                             onChange={handleInputChange}
+                            id="image"
                             name='image'
                             type="text"
                             placeholder="Enter Image URL"
@@ -131,6 +138,7 @@ function Inventory() {
                             <Form.Check
                                 value="Appliance"
                                 onChange={handleInputChange}
+                                id="product_type"
                                 name="product_type"
                                 type="radio"
                                 label="Appliance"
@@ -138,6 +146,7 @@ function Inventory() {
                             <Form.Check
                                 value="Computer"
                                 onChange={handleInputChange}
+                                id="product_type"
                                 name="product_type"
                                 type="radio"
                                 label="Computer"
@@ -145,6 +154,7 @@ function Inventory() {
                             <Form.Check
                                 value="Phone"
                                 onChange={handleInputChange}
+                                id="product_type"
                                 name="product_type"
                                 type="radio"
                                 label="Phone"
@@ -152,6 +162,7 @@ function Inventory() {
                             <Form.Check
                                 value="TV"
                                 onChange={handleInputChange}
+                                id="product_type"
                                 name="product_type"
                                 type="radio"
                                 label="TV"
@@ -166,6 +177,7 @@ function Inventory() {
                             <Form.Check
                                 value={true}
                                 onChange={handleInputChange}
+                                id="fast_deliver"
                                 name="fast_deliver"
                                 type="radio"
                                 label="Fast Delivery"
@@ -174,6 +186,7 @@ function Inventory() {
                             <Form.Check
                                 value={false}
                                 onChange={handleInputChange}
+                                id="fast_deliver"
                                 name="fast_deliver"
                                 type="radio"
                                 label="7 Day Deliver"
@@ -183,7 +196,7 @@ function Inventory() {
                 </fieldset>
                 <Form.Group as={Row} className="mb-3">
                     <Col sm={{ span: 8, offset: 2 }}>
-                        <Button onClick={handleSubmit()} type="submit" style={{ width: 400 }}>Submit</Button>
+                        <Button onClick={handleSubmit} type="submit" style={{ width: 400 }}>Submit</Button>
                     </Col>
                 </Form.Group>
             </Form>
