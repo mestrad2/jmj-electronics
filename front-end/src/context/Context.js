@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from "react"
-import { cartReducer, productReducer } from "./Reducers";
+import { cartReducer, productReducer, addItemReducer } from "./Reducers";
 
 const Cart = createContext()
 
@@ -38,11 +38,19 @@ function Context({ children }) {
         searchQuery: "",
     })
 
-    //fetch products from database
+    const [addItemState, addItemDispatch] = useReducer(addItemReducer, {
+        description: '',
+        cost: '',
+        in_stock: 0,
+        spec: '',
+        image: '',
+        product_type: '',
+        fast_deliver: false
+    })
 
 
     return (
-        <Cart.Provider value={{ state, dispatch, productState, productDispatch }}>
+        <Cart.Provider value={{ state, dispatch, productState, productDispatch, addItemState, addItemDispatch }}>
             {children}
         </Cart.Provider>
     )

@@ -45,3 +45,12 @@ export const productReducer = (state, action) => {
             return state
     }
 }
+
+export const addItemReducer = (state, action) => {
+    switch (action.type) {
+        case "addItem":
+            return { ...state, item: action.payload }
+        default:
+            return state
+    }
+}
