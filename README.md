@@ -70,7 +70,7 @@ Commerce is the key element in modern society.   Technology advancements this ce
 
 - Developers will spend hours researching.
 
-- Current bug: while completing the form for updating the products database an update is sent when each form field is completed.  This results in multiple incomplete data entries.
+- Current bug: issues with remove items from cart.  Cart is removing all items instead of specific items.
 
 - Future development: separating the products into various tables and then using SQL tools to merge relevant data into the "shopping cart".
 
