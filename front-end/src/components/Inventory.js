@@ -1,6 +1,61 @@
+import { useState } from "react"
 import { Form, Row, Col, Button } from "react-bootstrap"
+import { CartState } from "../context/Context"
 
 function Inventory() {
+    const {
+        addItemDispatch
+    } = CartState()
+
+
+    const initialItem = {
+        description: "",
+        cost: "",
+        image: "",
+        spec: "",
+        in_stock: "",
+        fast_deliver: false,
+        product_type: "",
+    }
+
+    const [item, setItem] = useState(initialItem)
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target
+        console.log("Name", name)
+        console.log("Value", value)
+        setItem({
+            ...item,
+            [name]: value
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const newItem = item
+        console.log("NewItem", item.description)
+        try {
+            fetch(`http://localhost:3003/products`, {
+                method: "POST",
+                body: JSON.stringify(newItem),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+                .then((response) => (response.json()))
+                .then((response) => {
+                    if (response.status === 200) {
+                        addItemDispatch({
+                            type: "addItem",
+                            payload: newItem
+                        })
+                    }
+                })
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     return (
         <div className="inventoryContainer">
@@ -9,31 +64,69 @@ function Inventory() {
                 <Form.Group as={Row} className="mb-3">
                     <Form.Label column sm={2}>Add a Product</Form.Label>
                     <Col>
-                        <Form.Control type="text" placeholder="Enter Product Name" style={{ width: 750 }} />
+                        <Form.Control
+                            value={item.description}
+                            onChange={handleInputChange}
+                            id="description"
+                            name='description'
+                            type="text"
+                            placeholder="Enter Product Name"
+                            style={{ width: 750 }}
+                        />
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3">
                     <Form.Label column sm={2}>Add a Price</Form.Label>
                     <Col>
-                        <Form.Control type="text" placeholder="Enter Price" style={{ width: 750 }} />
+                        <Form.Control
+                            value={item.cost}
+                            onChange={handleInputChange}
+                            id="cost"
+                            name='cost'
+                            type="text"
+                            placeholder="Enter Price"
+                            style={{ width: 750 }}
+                        />
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3">
                     <Form.Label column sm={2}>Add Quantity in Stock</Form.Label>
                     <Col>
-                        <Form.Control type="text" placeholder="Enter Quantity in Stock" style={{ width: 750 }} />
+                        <Form.Control
+                            value={item.in_stock}
+                            onChange={handleInputChange}
+                            id="in_stock"
+                            name='in_stock'
+                            type="text"
+                            placeholder="Enter Quantity in Stock"
+                            style={{ width: 750 }}
+                        />
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3">
                     <Form.Label column sm={2}>Add a Description</Form.Label>
                     <Col>
-                        <Form.Control type="text" placeholder="Enter Description" style={{ width: 750 }} />
+                        <Form.Control
+                            value={item.spec}
+                            onChange={handleInputChange}
+                            id="spec"
+                            name='spec'
+                            type="text"
+                            placeholder="Enter Description"
+                            style={{ width: 750 }} />
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3">
                     <Form.Label column sm={2}>Add a Image</Form.Label>
                     <Col>
-                        <Form.Control type="text" placeholder="Enter Image URL" style={{ width: 750 }} />
+                        <Form.Control
+                            value={item.image}
+                            onChange={handleInputChange}
+                            id="image"
+                            name='image'
+                            type="text"
+                            placeholder="Enter Image URL"
+                            style={{ width: 750 }} />
                     </Col>
                 </Form.Group>
                 <fieldset>
@@ -41,37 +134,69 @@ function Inventory() {
                         <Form.Label as="legend" column sm={2}>
                             Product Type
                         </Form.Label>
-                        <Col sm={10}  className="radios">
+                        <Col sm={10} className="radios">
                             <Form.Check
+                                value="Appliance"
+                                onChange={handleInputChange}
+                                id="product_type"
+                                name="product_type"
                                 type="radio"
                                 label="Appliance"
-                                name="formHorizontalRadios"
-                                id="formHorizontalRadios1"
                             />
                             <Form.Check
+                                value="Computer"
+                                onChange={handleInputChange}
+                                id="product_type"
+                                name="product_type"
                                 type="radio"
                                 label="Computer"
-                                name="formHorizontalRadios"
-                                id="formHorizontalRadios2"
                             />
                             <Form.Check
+                                value="Phone"
+                                onChange={handleInputChange}
+                                id="product_type"
+                                name="product_type"
                                 type="radio"
                                 label="Phone"
-                                name="formHorizontalRadios"
-                                id="formHorizontalRadios3"
                             />
                             <Form.Check
+                                value="TV"
+                                onChange={handleInputChange}
+                                id="product_type"
+                                name="product_type"
                                 type="radio"
                                 label="TV"
-                                name="formHorizontalRadios"
-                                id="formHorizontalRadios4"
+                            />
+                        </Col>
+                    </Form.Group>
+                    <Form.Group as={Row} className="mb-3">
+                        <Form.Label as="legend" column sm={2}>
+                            Delivery Type
+                        </Form.Label>
+                        <Col sm={10} className="radios">
+                            <Form.Check
+                                value={true}
+                                onChange={handleInputChange}
+                                id="fast_deliver"
+                                name="fast_deliver"
+                                type="radio"
+                                label="Fast Delivery"
+
+                            />
+                            <Form.Check
+                                value={false}
+                                onChange={handleInputChange}
+                                id="fast_deliver"
+                                name="fast_deliver"
+                                type="radio"
+                                label="7 Day Deliver"
                             />
                         </Col>
                     </Form.Group>
                 </fieldset>
                 <Form.Group as={Row} className="mb-3">
                     <Col sm={{ span: 8, offset: 2 }}>
-                        <Button type="submit" style={{ width: 400 }}>Submit</Button>
+                        <Button onClick={handleSubmit} type="submit" style={{ width: 400 }}>Submit</Button>
                     </Col>
                 </Form.Group>
             </Form>

@@ -6,27 +6,25 @@ import { Link } from "react-router-dom"
 function Product({ prod }) {
 
     const { state: { cart }, dispatch } = CartState()
-
-
+    console.log("This is prod, ", prod)
     return <div className="products">
         <Card>
-            <Card.Img variant='top' src={prod.image} alt={prod.name} />
+            <Card.Img variant='top' src={prod.image} alt={prod.description} />
             <Card.Body>
-                <Card.Title>{prod.name}</Card.Title>
+                <Card.Title>{prod.description}</Card.Title>
                 <Card.Subtitle style={{ paddingBottom: 10 }}>
-                    <span>$ {Number(prod.price)} </span>
+                    <span>$ {Number(prod.cost)} </span>
                     <br />
-                    <span>Description: {prod.description} </span>
+                    <span>Description: {prod.spec} </span>
                     <br />
-                    <span>Type: {prod.productType}</span>
-                    {prod.fastDelivery ? (
+                    {prod.fast_deliver ? (
                         <div>Fast Delivery</div>
                     ) : (
                         <div>7 Day Delivery</div>
                     )}
                 </Card.Subtitle>
                 {
-                    cart.some((p) => p.id === prod.id) ? (
+                    cart.some((p) => p.prod_id === prod.prod_id) ? (
                         <Button onClick={() => {
                             dispatch({
                                 type: 'removeFromCart',
@@ -39,13 +37,13 @@ function Product({ prod }) {
                                 type: 'addToCart',
                                 payload: prod,
                             })
-                        }} disabled={!prod.inStock}>
-                            {!prod.inStock ? "Out of Stock" : "Add to Cart"}
+                        }} disabled={!prod.in_stock}>
+                            {!prod.in_stock ? "Out of Stock" : "Add to Cart"}
                         </Button>
                     )
                 }
                 <Button>
-                    <Link to={`/edit/${prod.id}`} style={{ color: "white" }}>Update Item</Link>
+                    <Link to={`/edit/${prod.prod_id}`} style={{ color: "white" }}>Update Item</Link>
                 </Button>
             </Card.Body>
         </Card>

@@ -46,11 +46,11 @@ function NavbarComponent() {
                                                 <img
                                                     src={prod.image}
                                                     className="cartItemImg"
-                                                    alt={prod.name}
+                                                    alt={prod.description}
                                                 />
                                                 <div className="cartItemDetail">
-                                                    <span>{prod.name}</span>
-                                                    <span>$ {prod.price}</span>
+                                                    <span>{prod.description}</span>
+                                                    <span>$ {prod.cost}</span>
                                                 </div>
                                                 <AiFillDelete
                                                     fontSize="20px"

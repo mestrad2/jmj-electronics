@@ -16,6 +16,11 @@ export const cartReducer = (state, action) => {
                     c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty
                 ),
             };
+        case 'startCart':
+            return {
+                ...action.payload,
+                initialized: true
+            }
         default:
             return state;
     }
@@ -24,7 +29,7 @@ export const cartReducer = (state, action) => {
 
 export const productReducer = (state, action) => {
     switch (action.type) {
-        case "priceSort":
+        case "costSort":
             return { ...state, sort: action.payload }
         case "stockSort":
             return { ...state, byStock: !state.byStock }
@@ -36,6 +41,17 @@ export const productReducer = (state, action) => {
             return { ...state, searchQuery: action.payload }
         case "clear":
             return { byStock: false, byProductType: false, searchQuery: "" }
+        default:
+            return state
+    }
+}
+
+export const addItemReducer = (state, action) => {
+    switch (action.type) {
+        case "addItem":
+            return {
+                ...action.payload
+            }
         default:
             return state
     }

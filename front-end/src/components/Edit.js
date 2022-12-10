@@ -4,8 +4,15 @@ import { CartState } from "../context/Context"
 
 function Edit() {
 
-    let { id } = useParams()
-    console.log(id)
+    const initialItemState = {
+        description: "",
+        cost: "",
+        image: "",
+        spec: "",
+        stock: 0,
+        fast_deliver: false,
+        product_type: "",
+    }
 
     return (
         <div className="inventoryContainer">
