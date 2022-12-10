@@ -16,36 +16,36 @@ function Home() {
 
         if (sort) {
             tempProducts = tempProducts.sort((a, b) => (
-                sort === 'lowToHigh' ? a.price - b.price : b.price - a.price
+                sort === 'lowToHigh' ? a.cost - b.cost : b.cost - a.cost
             ))
         }
 
         if (!byStock) {
-            tempProducts = tempProducts.filter((prod) => prod.inStock)
+            tempProducts = tempProducts.filter((prod) => prod.in_stock)
         }
 
         if (typeSort === "appliance") {
-            tempProducts = tempProducts.filter((prod) => prod.productType.includes("appliance"))
+            tempProducts = tempProducts.filter((prod) => prod.product_type.includes("appliance"))
         }
 
         if (typeSort === "computer") {
-            tempProducts = tempProducts.filter((prod) => prod.productType.includes("computer"))
+            tempProducts = tempProducts.filter((prod) => prod.product_type.includes("computer"))
         }
 
         if (typeSort === "phone") {
-            tempProducts = tempProducts.filter((prod) => prod.productType.includes("phone"))
+            tempProducts = tempProducts.filter((prod) => prod.product_type.includes("phone"))
         }
 
         if (typeSort === "tv") {
-            tempProducts = tempProducts.filter((prod) => prod.productType.includes("tv"))
+            tempProducts = tempProducts.filter((prod) => prod.product_type.includes("tv"))
         }
 
         if (byFastDelivery) {
-            tempProducts = tempProducts.filter((prod) => prod.fastDelivery)
+            tempProducts = tempProducts.filter((prod) => prod.fast_deliver)
           }
 
         if (searchQuery) {
-            tempProducts = tempProducts.filter((prod) => prod.name.toLowerCase().includes(searchQuery))
+            tempProducts = tempProducts.filter((prod) => prod.description.toLowerCase().includes(searchQuery))
         }
 
         return tempProducts

@@ -17,7 +17,7 @@ function Filters() {
                     id={`inline-1`}
                     onChange={() =>
                         productDispatch({
-                            type: "priceSort",
+                            type: "costSort",
                             payload: "lowToHigh"
                         })
                     }
@@ -33,7 +33,7 @@ function Filters() {
                     id={`inline-2`}
                     onChange={() =>
                         productDispatch({
-                            type: "priceSort",
+                            type: "costSort",
                             payload: "highToLow"
                         })
                     }

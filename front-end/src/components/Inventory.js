@@ -1,5 +1,8 @@
 import { Form, Row, Col, Button } from "react-bootstrap"
 
+const handleSubmit = () => {
+    
+}
 function Inventory() {
 
     return (
@@ -71,7 +74,7 @@ function Inventory() {
                 </fieldset>
                 <Form.Group as={Row} className="mb-3">
                     <Col sm={{ span: 8, offset: 2 }}>
-                        <Button type="submit" style={{ width: 400 }}>Submit</Button>
+                        <Button onClick={handleSubmit()} type="submit" style={{ width: 400 }}>Submit</Button>
                     </Col>
                 </Form.Group>
             </Form>

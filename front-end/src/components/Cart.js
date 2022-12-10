@@ -11,7 +11,7 @@ function Cart() {
 
     //MDN Web Docs Array.prototype.reduce()
     useEffect(() => {
-        setTotal(cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0))
+        setTotal(cart.reduce((acc, curr) => acc + Number(curr.cost) * curr.qty, 0))
     }, [cart])
 
     return (
@@ -20,16 +20,16 @@ function Cart() {
                 <ListGroup>
                     {
                         cart.map((prod) => (
-                            <ListGroup.Item key={prod.id}>
+                            <ListGroup.Item key={prod.prod_id}>
                                 <Row>
                                     <Col md={2}>
-                                        <Image src={prod.image} alt={prod.name} fluid rounded></Image>
+                                        <Image src={prod.image} alt={prod.description} fluid rounded></Image>
                                     </Col>
                                     <Col md={2}>
-                                        <span>{prod.name}</span>
+                                        <span>{prod.description}</span>
                                     </Col>
                                     <Col md={2}>
-                                        $ {prod.price}
+                                        $ {prod.cost}
                                     </Col>
                                     <Col md={2}>
                                         <Form.Control
@@ -39,12 +39,12 @@ function Cart() {
                                                 dispatch({
                                                     type: "changeCartQuantity",
                                                     payload: {
-                                                        id: prod.id,
+                                                        id: prod.prod_d,
                                                         qty: e.target.value,
                                                     }
                                                 })}
                                         >
-                                            {[...Array(prod.inStock).keys()].map((x) => (
+                                            {[...Array(prod.in_stock).keys()].map((x) => (
                                                 <option key={x + 1}> {x + 1} </option>
                                             ))}
                                         </Form.Control>
