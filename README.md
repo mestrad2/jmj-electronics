@@ -1,96 +1,79 @@
-# Config Note
+# JMJ-ELECTRONIS MERN PROJECT
 
-In config/config.json the connection to postgres will need to change based on the user's enviroment.
-In .env changed the port to 3003 to avoid conflict with front end app.
+## Participants:
+    - Manuel Estrada
+    - Jonovan Watts
+    - Jeffrey Heller
 
-# Getting Started with Create React App
+# INSPIRATION
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Commerce is the key element in modern society.   Technology advancements this century has made avenues of trade available to more of the earth’s population.  A large part of this is eCommerce.  Conducting sales via the internet is the present and near future of the economy.
 
-## Available Scripts
+# TECHNOLOGIES USED
+    - HTML
+    - CSS
+    - JavaScript
+    - React (various libraries)
+    - Express
+    - Postgres
+    - pgAdmin4
+    - Visual Studio Code
+    - Sequelize
 
-In the project directory, you can run:
+## OTHER RESOURCES
+    - NC State Software Development Boot-Camp
+    - W3schools (w3shcools.com)
+    - RoadsideCoder (YouTube channel)
+    - Folks Talk (folkstalk.com)
+    - Stack Overflow (stackoverflow.com)
+    - tabnine (tabnine.com)
+    - Cosmos (cosmos.video)
 
-### `npm start`
+# Participant Contributions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-
-Jonovan Watts Project Contributions
+## Jonovan Watts Project Contributions
 
 - Implemented the code and tested the code for the controllers(through Postman)
-
 - Assisted Jeff with the Back-End portion of the project
-
 - Assisted with the database in PG Admin
-
 - Assisted in server.js with the dependencies, configuration, root, controllers, and customized the Port
-
-- Researched ideas on sequelize operators such as Op.Or and Op.Like to make the search for the lookup tables have variability in them and implemented all
-
+- Researched ideas on sequelize operators such as Op.Or and Op.Like to make the search for the lookup tables have variability
 - Researched links on how to implement a shopping cart for the group
-
 - Reviewed code for group members and merged changes through Github
-
 - Attended all work sessions with the group outside of class through Cosmos
 
+
+## Jeffrey Heller Project Contributions
+
+- Primary scope in this project is the back end
+- Created models and migrations for backend
+- Assisted Jonovan with controllers
+- Created test data 
+- Researched various topics concerning backend, sequelize, and Postgres
+- Code review and change control through Github
+- Attended all work sessions with the group outside of class through Cosmos
+
+
+## Manuel Estrada Project Contributions
+- THE front end MVP
+- Researched shopping cart designs
+- Researched various React components and designs
+- Code review and change control through Github
+- Attended all work sessions with the group outside of class through Cosmos
+
+
+# Bugs, Opportunities, Future Development, and Lessons Learned
+
+- In this project we used a single database table for project time efficiency.  Single database would be ok for a small eCommerce site but would be inefficient for a large scale business.  For a larger business there would be different databases based on prouduct, vendor, and financials. SQL tools would be needed to merge various databased based on the business objective.
+
+- Agile development method is necessary for creating the best product. Each participant had to change direction several times to meet various needs of the project.
+
+- Developers will spend hours researching.
+
+- Current bug: while completing the form for updating the products database an update is sent when each form field is completed.  This results in multiple incomplete data entries.
+
+- Future development: separating the products into various tables and then using SQL tools to merge relevant data into the "shopping cart".
+
+- Future development: creating a "buyer's tool".  The "buyer's tool" would be used by the company's product catagory teams to update their product's information.
+
+_ Future development: database for customer purchase history.
