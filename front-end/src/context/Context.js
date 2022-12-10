@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useState, useEffect } from "react"
+import { createContext, useContext, useReducer, useEffect } from "react"
 import { cartReducer, productReducer } from "./Reducers";
 
 const Cart = createContext()
@@ -10,15 +10,11 @@ const initialState = {
 }
 
 function Context({ children }) {
-    const [data, setData] = useState([])
-
     useEffect(() => {
         fetch(`http://localhost:3003/products`)
             .then(response => response.json())
             .then(resData => {
                 if (resData.length > 0) {
-                    console.log("This is resData ", resData)
-                    setData(resData)
                     dispatch({
                         type: "startCart",
                         payload: {
@@ -26,7 +22,7 @@ function Context({ children }) {
                             products: resData
                         }
                     })
-                    return setData(resData)
+                    return resData
                 } else {
                     return console.log('Not Found')
                 }
